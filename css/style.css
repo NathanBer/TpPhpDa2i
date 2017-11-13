@@ -1,0 +1,47 @@
+#imagesfilm img{
+    max-height: 200px;
+    max-width: 200px;
+}
+#imagesreal img, #imagesact img, #imagesfilmreal img{
+    height: 200px;
+    width: 150px;
+}
+#imagesact figure, #imagesfilmreal figure{
+    display:inline-block;
+}
+html{
+    background-color:rgb(40,40,40);
+}
+#conteneur{
+    margin:-10px 3%;
+    background-color: lightyellow;
+}
+main, footer{
+    padding: 0px 3%;
+}
+h1{
+    text-align: center;
+}
+#date, h1, #figreal,#datenaissance{
+    text-align: center;
+}
+nav{
+    padding: 10px;
+    text-align: center;
+    background-image: url("../img/marge.jpg");
+    background-position: center;
+}
+nav a{
+    font-family: "DejaVu Sans";
+    font-size: 20px;
+    text-decoration: none;
+    color: goldenrod;
+    padding: 0px 5%;
+}
+nav a:hover{
+    color: yellow;
+}
+footer{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
