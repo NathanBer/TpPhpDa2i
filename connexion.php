@@ -15,4 +15,3 @@ or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 mysqli_select_db($link, 'nathberoux_siteweb')
 or die ('Erreur de sélection de la BD : ' . mysqli_error($link));
 mysqli_set_charset($link, 'utf8');
-?>

@@ -1,6 +1,7 @@
 #imagesfilm img{
     max-height: 200px;
     max-width: 200px;
+    padding-right: 5px;
 }
 #imagesreal img, #imagesact img, #imagesfilmreal img{
     height: 200px;
@@ -44,4 +45,8 @@ nav a:hover{
 footer{
     padding-bottom: 10px;
     padding-top: 10px;
+}
+
+a{
+    text-decoration: none;
 }
