@@ -7,5 +7,5 @@
  */
 ?>
 <h1 id="titre">
-
+    <?php echo $data; ?>
 </h1>

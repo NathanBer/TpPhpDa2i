@@ -9,3 +9,4 @@
     function getBlock($filephp, $data = []){
         require $filephp;
     }
+?>
