@@ -10,6 +10,8 @@ ini_set('display_errors', 'on');
 ini_set('log_errors', 'on');
 ini_set('error_log', '/path/to/log/php.log');
 
+global $link;
+
 $link = mysqli_connect('mysql-nathberoux.alwaysdata.net', '146914', 'azerty')
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 mysqli_select_db($link, 'nathberoux_siteweb')

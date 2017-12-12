@@ -15,7 +15,7 @@ if(isset($_GET['idfilm']))
         $tuples = mysqli_fetch_assoc($reply);
         $nbresult = mysqli_num_rows($reply);
         if ($nbresult == 0) {
-            header("location: index.html");
+            header("location: index.php");
         }
         else{
             $id = $_GET['idfilm'];
@@ -24,23 +24,23 @@ if(isset($_GET['idfilm']))
             $tuples = mysqli_fetch_assoc($reply);
             ?>
             <html>
-            <head>
-                <link rel="stylesheet" type="text/css" href="css/style.css">
-                <?php
-                getBlock('header.php', $tuples['Titre']);
-                ?>
-            </head>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="css/style.css">
+                    <?php
+                    getBlock('header.php', $tuples['Titre']);
+                    ?>
+                </head>
                 <body>
                     <div id="conteneur">
                         <header>
                             <nav>
-                                <a href="index.html">Index</a>
+                                <a href="index.php">Index</a>
                             </nav>
                         </header>
                         <main>
                             <?php
                             getBlock('titre.php', $tuples['Titre']);
-                            getBlock('date.php', $tuples['DateParution']);
+                            getBlock('dateparu.php', $tuples['DateParution']);
                             getBlock('synopsis.php', $tuples['Synopsis']);
                             getBlock('note.php', $tuples['Note']);
                             $requete="SELECT * FROM Photo WHERE IDPhoto IN (SELECT IDPhoto from AssoPhotoFilm WHERE IDFilm=".$id.")";
@@ -50,8 +50,14 @@ if(isset($_GET['idfilm']))
                             $reply = mysqli_query($link, $requete);
                             $tuples =mysqli_fetch_assoc($reply);
                             getBlock("inforeal.php",$tuples);
+                            $requete="SELECT * FROM Personne WHERE IDPers IN (SELECT IDPers from AssoFilmPers WHERE IDFilm=".$id." AND Role=0)";
+                            $reply = mysqli_query($link, $requete);
+                            getBlock('acteursprincipaux.php',$reply);
                             ?>
                         </main>
+                        <?php
+                            getBlock('footer.php',null);
+                        ?>
                     </div>
                 </body>
             </html>
@@ -59,9 +65,9 @@ if(isset($_GET['idfilm']))
         }
     }
     else{
-        header("location: index.html");
+        header("location: index.php");
     }
 }
 else{
-    header("location: index.html");
+    header("location: index.php");
 }
